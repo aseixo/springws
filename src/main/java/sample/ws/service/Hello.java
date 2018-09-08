@@ -10,13 +10,23 @@ import javax.xml.ws.ResponseWrapper;
 @WebService(targetNamespace= "http://service.ws.sample", name = "Hello")
 public interface Hello {
 
-	@WebResult(name= "return", targetNamespace = "")
+	/*@WebResult(name= "return", targetNamespace = "")
 	@RequestWrapper(localName= "sayHello",
 			targetNamespace= "http://service.ws.sample/", 
 			className = "sample.ws.service.SayHello")
 	@WebMethod(action = "urn:SayHello")
 	@ResponseWrapper(localName = "sayHelloResponse",
 			targetNamespace= "http://service.ws.sample/", 
-			className = "sample.ws.service.SayHelloResponse")
+			className = "sample.ws.service.SayHelloResponse")*/
+	
+	@WebResult(name= "return", targetNamespace = "")
+	@RequestWrapper(localName= "sayHello",
+			targetNamespace= "http://service.ws.sample/", 
+			className = "")
+	@WebMethod(action = "urn:SayHello")
+	@ResponseWrapper(localName = "sayHelloResponse",
+			targetNamespace= "http://service.ws.sample/", 
+			className = "")
+	
 	public String sayHello(@WebParam (name= "myName", targetNamespace= "") String myName);
 }
